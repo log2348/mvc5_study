@@ -13,19 +13,21 @@
     <br/>
     <div>
         @Html.Label("날짜")
-        @*@Html.DropDownList("date")*@
+        @Html.TextBox("content-textbox")
         <br />
         <br />
         @Html.Label("내용")
         @Html.TextBox("content-textbox")
-        
+
     </div>
 
-<table class="table">
-    <thead style="text-align: center;">
+    <br/>
+    <br/>
+
+<table class="table" style="text-align: center;">
+    <thead>
         <tr>
-            <th>&nbsp;
-            </th>
+            <th>선택</th>
             <th>날짜</th>
             <th>내용</th>
             <th>완료 여부</th>
