@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "BoardList";
+}
+
+@model List<MVCStudy.Models.BoardListModel>
+
+<h2>BoardList</h2>
+
+
+@foreach (MVCStudy.Models.BoardListModel board in Model)
+{
+    <div>
+        <h4>제목 : </h4>
+        <p>@board.Title</p>
+    </div>
+    <div>
+        <h4>작성자 : </h4>
+        <p>@board.Writer</p>
+    </div>
+    <div>
+        <h4>내용 : </h4>
+        <p>@board.Content</p>
+    </div>
+}
+

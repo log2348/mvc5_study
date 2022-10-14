@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@model MVCStudy.Models.IndexModel
+<h2>Index</h2>
+
+ID = @Model.Id
+<br/>
+Name = @Model.Name
+
+@for (int i = 0; i < Model.FruitList.Count; i++)
+{
+    // 과일명이 '바나나'일 경우, 글자 색깔을 노란색으로 표시
+
+    if (Model.FruitList[i] == "바나나")
+                {
+      <span style="color: yellow;">@Model.FruitList[i]</span>
+                    
+                } else
+                {
+      <span>@Model.FruitList[i]</span>
+                }
+}
+

@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Test";
+}
+
+@model MVCTodo.Models.TestModel
+
+
+<h2>RAZOR 샘플</h2>
+
+<h3>안녕하세요. @Model.Name 님, 오늘은 @DateTime.Now.ToShortDateString() 입니다.</h3>
+
+@{
+    string strName = "Jihyeon.PARK";
+    string strDate = DateTime.Now.ToShortDateString();
+}
+
+<h3>안녕하세요. @strName 님, 오늘은 @strDate 입니다.</h3>
+<h3>안녕하세요. @(strName + "님 오늘은 " + DateTime.Now.ToShortDateString() + "입니다.")</h3>
+
+@if (DateTime.Now.Year == 2022)
+{
+    <text>
+        2015년 을미년입니다.
+        오늘은 @DateTime.Now.ToString() 입니다.
+    </text>
+}
+
+@if (DateTime.Now.Year == 2022)
+{
+    <span>
+        2015년 을미년입니다.
+        오늘은 @DateTime.Now.ToString() 입니다.
+    </span>
+}
+
+@{
+    if (DateTime.Now.Year == 2022)
+    {
+        @: 2015년 을미년입니다.
+        @: 오늘은 @DateTime.Now.ToString() 입니다.
+    }
+}
+
+@Html.BeginForm()
+
+@Html.TextArea("textarea")
+
+@*@Html.DropDownList("date")*@
+@Html.Hidden("hidden")
+
+@*@Html.ImageActionLink("")
+
+
+    @Html.BeginForm("")
+
+    @Html.Raw
+
+    @Html.Partial
+    @Html.RenderPartial
+    @Html.RenderAction*@
+
+
+

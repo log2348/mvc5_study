@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Todo";
+}
+
+@model List<MVCTodo.Models.Todo>
+
+<div class="container">
+
+<h2 style="text-align: center;">My Todo List</h2>
+
+    <br/>
+    <br/>
+    <div>
+        @Html.Label("날짜")
+        @*@Html.DropDownList("date")*@
+        <br />
+        <br />
+        @Html.Label("내용")
+        @Html.TextBox("content-textbox")
+        
+    </div>
+
+<table class="table">
+    <thead style="text-align: center;">
+        <tr>
+            <th>&nbsp;
+            </th>
+            <th>날짜</th>
+            <th>내용</th>
+            <th>완료 여부</th>
+        </tr>
+        @foreach (MVCTodo.Models.Todo item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.CheckBox("checkbox")
+                    </td>
+                    <td >@item.Date</td>
+                    <td >
+                        @item.Content
+                    </td>
+                    <td>
+                        @Html.RadioButton("complete", "")
+                    </td>
+                </tr>
+            }
+    </thead>
+    <tbody id="table-body"></tbody>
+</table>
+
+</div>
+
