@@ -42,23 +42,32 @@
     }
 }
 
-@Html.BeginForm()
+@*<form action="/Test/Test" method="post">
+    System.Web.Mvc.Html.MvcForm*@
+    @Html.BeginForm()
 
-@Html.TextArea("textarea")
+@*<textarea cols="20" id="textarea" name="textarea" rows="2">
+</textarea>*@
+    @Html.TextArea("textarea")
 
-@Html.DropDownList("date")
-@Html.Hidden("hidden")
+    @*@Html.DropDownList("Todo")*@
 
-@*@Html.ImageActionLink("")
+@*<input id="hidden" name="hidden" type="hidden" value="" />*@
+    @Html.Hidden("hidden")
+
+@*<a class="Test" href="/Test/Content1">Button1</a>*@
+    @Html.ActionLink("Button1", "Content1", null, new { @class = "Test" })
 
 
-@Html.BeginForm("")
+@*<p>Raw Test</p>*@
+    @Html.Raw("<p>Raw Test</p>")
 
-@Html.Raw
+@*PartialView 반환*@
+    @Html.Partial("PartialTest")
 
-@Html.Partial
-@Html.RenderPartial
-@Html.RenderAction*@
+    @Html.RenderPartial("PartialTest")
+
+    @Html.RenderAction("Content1")
 
 
 

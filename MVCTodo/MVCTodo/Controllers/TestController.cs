@@ -23,16 +23,18 @@ namespace MVCTodo.Controllers
         /**
          * ContentResult
          * Text 결과를 표현
-         * ContentType 속성 변경 시 HTML 표현 가능
          */
-        public ContentResult Content1()
+        public ContentResult TextContent()
         {
             ContentResult cr = new ContentResult();
             cr.Content = "MostiSoft 기술 세미나";
             return cr;
         }
 
-        public ContentResult Content2()
+        /**
+         * HTML 표현 가능
+         */
+        public ContentResult HtmlContent()
         {
             ContentResult cr = new ContentResult();
             cr.ContentType = "text/html";
@@ -42,7 +44,7 @@ namespace MVCTodo.Controllers
         }
 
         /*
-        public FileStreamResult Content3()
+        public FileStreamResult FileContent()
         {
             // 파일 다운로드시 사용
             // 다운로드 가능한 파일을 Stream으로 표현
@@ -61,7 +63,7 @@ namespace MVCTodo.Controllers
          * Http 상태코드 반환
          * Application은 이 Response Code 값에 따라서 적절하게 반응
          */
-        public HttpStatusCodeResult Content4()
+        public HttpStatusCodeResult HttpStatusCodeContent()
         {
             return new HttpStatusCodeResult(401);
         }
@@ -71,7 +73,7 @@ namespace MVCTodo.Controllers
          * javascript 코드 return
          * 브라우저에 다운로드 된(view명 .js 파일)
          */
-        public JavaScriptResult Content5()
+        public JavaScriptResult JavaScriptContent()
         {
             JavaScriptResult jsr = new JavaScriptResult();
             jsr.Script = "<script>alert('MostiSoft 기술세미나');</script>";
@@ -83,7 +85,7 @@ namespace MVCTodo.Controllers
          * JsonResult
          * Model을 json 형태로 반환
          */
-        public JsonResult Content6()
+        public JsonResult JsonContent()
         {
             TestModel tm = new TestModel();
             tm.Id = 1;

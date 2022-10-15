@@ -7,39 +7,53 @@
 
 <div class="container">
 
-<h2 style="text-align: center;">My Todo List</h2>
+    <h2 style="text-align: center;">My Todo List</h2>
 
-    <br/>
-    <br/>
+    <br />
+    <br />
     <div>
-        @Html.Label("날짜")
-        @Html.TextBox("content-textbox")
-        <br />
-        <br />
-        @Html.Label("내용")
-        @Html.TextBox("content-textbox")
-
+        <div class="row">
+            &nbsp;&nbsp;&nbsp;
+            @Html.Label("날짜")&nbsp;&nbsp;
+            @Html.TextBox("content-textbox")&nbsp;&nbsp;
+            <button type="button" class="btn btn-primary" onclick="addData()">
+                검색
+            </button><br /><br />
+            &nbsp;&nbsp;&nbsp;
+            @Html.Label("내용")&nbsp;&nbsp;
+            @Html.TextBox("content-textbox")&nbsp;&nbsp;
+            <button type="button" class="btn btn-primary" onclick="addData()">
+                검색
+            </button>
+        </div>
     </div>
 
-    <br/>
-    <br/>
+    <br />
+    <br />
 
-<table class="table" style="text-align: center;">
-    <thead>
-        <tr>
-            <th>선택</th>
-            <th>날짜</th>
-            <th>내용</th>
-            <th>완료 여부</th>
-        </tr>
-        @foreach (MVCTodo.Models.Todo item in Model)
+    <table class="table" style="text-align: center">
+        <thead style="text-align: center">
+            <tr>
+                <th>
+                    <input type="checkbox"
+                           id="allCheck"
+                           name="allCheck"
+                           class="check_all_list"
+                           onclick="allCheck(event)" />
+                </th>
+                <th>날짜</th>
+                <th>내용</th>
+                <th>완료 여부</th>
+                <th>&nbsp;&nbsp;</th>
+            </tr>
+            @foreach (MVCTodo.Models.Todo item in Model)
             {
                 <tr>
                     <td>
                         @Html.CheckBox("checkbox")
                     </td>
-                    <td >@item.Date</td>
-                    <td >
+                    <td>@item.Date</td>
+                    <td>
                         @item.Content
                     </td>
                     <td>
@@ -47,9 +61,24 @@
                     </td>
                 </tr>
             }
-    </thead>
-    <tbody id="table-body"></tbody>
-</table>
+        </thead>
+        <tbody id="table-body"></tbody>
+    </table>
+
+    <div class="container" style="text-align: end;">
+        <button type="button"
+                class="btn btn-danger"
+                onclick="deleteSelectedData()">
+            선택 삭제
+        </button>&nbsp;&nbsp;
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#update-modal" onclick="clickUpdateAllbtn()">
+            일괄 수정
+        </button>
+        <br /><br />
+        <button class="btn btn-secondary" onclick="showJsonData()">항목 JSON 반환</button>&nbsp;&nbsp;
+        <button class="btn btn-secondary" onclick="promiseThen()">항목 불러오기</button>&nbsp;&nbsp;
+        <button class="btn btn-secondary" onclick="initData()">초기화</button>
+    </div>
 
 </div>
 
