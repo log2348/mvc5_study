@@ -63,8 +63,11 @@
 @Html.ActionLink("Button1", "Content1", null, new { @class = "Test" })
 
 
-@*<p>Raw Test</p>*@
-@Html.Raw("<p>Raw Test</p>")
+@* Html 코드를 인코딩하지 않은 원본 상태로 출력 *@
+@{ 
+    string email = "<div>pjh4794@naver.com</div>";
+}
+@Html.Raw(@email)
 
 @*PartialView 반환*@
 @Html.Partial("PartialTest")
