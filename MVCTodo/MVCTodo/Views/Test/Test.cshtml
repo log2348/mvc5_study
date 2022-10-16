@@ -20,54 +20,58 @@
 
 @if (DateTime.Now.Year == 2022)
 {
-    <text>
-        2015년 을미년입니다.
-        오늘은 @DateTime.Now.ToString() 입니다.
-    </text>
+    <div>
+        <text>
+            2022년 신축년입니다.
+            오늘은 @DateTime.Now.ToString() 입니다.
+        </text>
+    </div>
 }
 
 @if (DateTime.Now.Year == 2022)
 {
-    <span>
-        2015년 을미년입니다.
-        오늘은 @DateTime.Now.ToString() 입니다.
-    </span>
+    <div>
+        <span>
+            2022년 신축년입니다.
+            오늘은 @DateTime.Now.ToString() 입니다.
+        </span>
+    </div>
 }
 
 @{
     if (DateTime.Now.Year == 2022)
     {
-        @: 2015년 을미년입니다.
+        @: 2022년 신축년입니다.
         @: 오늘은 @DateTime.Now.ToString() 입니다.
     }
 }
 
 @*<form action="/Test/Test" method="post">
     System.Web.Mvc.Html.MvcForm*@
-    @Html.BeginForm()
+@Html.BeginForm()
 
 @*<textarea cols="20" id="textarea" name="textarea" rows="2">
-</textarea>*@
-    @Html.TextArea("textarea")
+    </textarea>*@
+@Html.TextArea("textarea")
 
-    @*@Html.DropDownList("Todo")*@
+@*@Html.DropDownList("Todo")*@
 
 @*<input id="hidden" name="hidden" type="hidden" value="" />*@
-    @Html.Hidden("hidden")
+@Html.Hidden("hidden")
 
 @*<a class="Test" href="/Test/Content1">Button1</a>*@
-    @Html.ActionLink("Button1", "Content1", null, new { @class = "Test" })
+@Html.ActionLink("Button1", "Content1", null, new { @class = "Test" })
 
 
 @*<p>Raw Test</p>*@
-    @Html.Raw("<p>Raw Test</p>")
+@Html.Raw("<p>Raw Test</p>")
 
 @*PartialView 반환*@
-    @Html.Partial("PartialTest")
+@Html.Partial("PartialTest")
 
-    @Html.RenderPartial("PartialTest")
+@*@Html.RenderPartial("PartialTest")*@
 
-    @Html.RenderAction("Content1")
+@*@Html.RenderAction("TextContent", null, null)*@
 
 
 
