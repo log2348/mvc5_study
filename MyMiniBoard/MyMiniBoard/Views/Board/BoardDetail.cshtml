@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "BoardDetail";
+}
+
+@model MyMiniBoard.Models.Board
+
+<h2>게시글 상세</h2>
+
+<br/>
+
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>제목</th>
+                <th>@Model.Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>작성자</td>
+                <td>@Model.Writer</td>
+                <td>작성일</td>
+                <td>@Model.CreatedDate</td>
+                <td>조회수</td>
+                <td>@Model.Views</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br />
+
+<ul class="list-group">
+    <li class="list-group-item">
+        @Model.Content
+    </li>
+</ul>
+
+<p><b>댓글</b></p>
+<input id="reply-content"/>
+<button onclick="addReply()">등록</button>
+<br /><br />
+<ul class="list-group" id="reply-container">
+    @*@Html.Partial("ReplyList")*@
+</ul>
+
+<script type="text/javascript">
+
+    addReply = () => {
+        var reply = {
+            Content: document.getElementById("reply-content").value,
+        }
+
+        var postData = JSON.stringify(reply);
+
+        $.ajax({
+            url: "/Reply/Post",
+            contentType: "application/json",
+            type: "post",
+            data: postData,
+            success: function (result) {
+                appendRow(result);
+                document.getElementById("reply-content").value = "";
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    }
+
+    appendRow = (rowData) => {
+
+        var addRow = `<li class="list-group-item">
+        <p><b>${rowData.Writer}</b>&nbsp;(${rowData.CreatedDate})</p>
+        <p>${rowData.Content}</p>
+    </li>`;
+
+        document.getElementById("reply-container").innerHTML += addRow;
+    }
+</script>
