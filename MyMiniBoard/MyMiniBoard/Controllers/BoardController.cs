@@ -19,13 +19,13 @@ namespace MyMiniBoard.Controllers
         {
             List<Board> boardList = new List<Board>
             {
-                new Board {Id = 1, State = "오픈", Title = "DB의 약자는 무엇인가요?", CreatedDate = DateTime.Now, Writer = "오해석", Views = 1},
-                new Board {Id = 2, State = "오픈", Title = "DB의 약자는 무엇인가요?", CreatedDate = DateTime.Now, Writer = "고수임", Views = 10},
-                new Board {Id = 3, State = "접수됨", Title = "제약조건의 종류는 어떤 것이 있나요?", CreatedDate = DateTime.Now, Writer = "오인경", Views = 43},
-                new Board {Id = 4, State = "진행중", Title = "DB의 약자는 무엇인가요?", CreatedDate = DateTime.Now, Writer = "오해석", Views = 16},
-                new Board {Id = 5, State = "완료됨", Title = "DB의 약자는 무엇인가요?", CreatedDate = DateTime.Now, Writer = "오해석", Views = 22},
-                new Board {Id = 6, State = "완료됨", Title = "DB의 약자는 무엇인가요?", CreatedDate = DateTime.Now, Writer = "오해석", Views = 56},
-                new Board {Id = 7, State = "완료됨", Title = "DB의 약자는 무엇인가요?", CreatedDate = DateTime.Now, Writer = "오해석", Views = 17},
+                new Board {Id = 1, State = "오픈", Title = "DB의 약자는 무엇인가요?", Writer = "오해석", Views = 1},
+                new Board {Id = 2, State = "오픈", Title = "DB의 약자는 무엇인가요?",  Writer = "고수임", Views = 10},
+                new Board {Id = 3, State = "접수됨", Title = "제약조건의 종류는 어떤 것이 있나요?",  Writer = "오인경", Views = 43},
+                new Board {Id = 4, State = "진행중", Title = "DB의 약자는 무엇인가요?", Writer = "오해석", Views = 16},
+                new Board {Id = 5, State = "완료됨", Title = "DB의 약자는 무엇인가요?", Writer = "오해석", Views = 22},
+                new Board {Id = 6, State = "완료됨", Title = "DB의 약자는 무엇인가요?", Writer = "오해석", Views = 56},
+                new Board {Id = 7, State = "완료됨", Title = "DB의 약자는 무엇인가요?", Writer = "오해석", Views = 17},
 
             };
             

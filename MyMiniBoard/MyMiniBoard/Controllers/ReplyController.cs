@@ -12,7 +12,7 @@ namespace MyMiniBoard.Controllers
         public JsonResult Post(Reply reply)
         {
             reply.Writer = "박지현";
-            reply.CreatedDate = DateTime.Now.ToString("yyyy-MM-dd");
+            reply.CreatedDate = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
 
             return Json(reply);
         }

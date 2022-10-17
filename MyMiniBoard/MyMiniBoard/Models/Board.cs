@@ -15,7 +15,7 @@ namespace MyMiniBoard.Models
 
         public string Writer { get; set; }
 
-        public DateTime CreatedDate { get; set; }
+        public string CreatedDate { get; set; } = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
 
         public string Content { get; set; }
 
