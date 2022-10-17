@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using MVCTodo.FIlter;
+using System.Web;
 using System.Web.Mvc;
 
 namespace MVCTodo
@@ -8,6 +9,7 @@ namespace MVCTodo
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new ActionFilter1());
         }
     }
 }

@@ -120,12 +120,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GetPostTestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\TodoController.cs" />
+    <Compile Include="FIlter\ActionFilter1.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PostModel.cs" />
     <Compile Include="Models\TestModel.cs" />
     <Compile Include="Models\Todo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -169,9 +172,11 @@
     <Content Include="Views\Todo\Todo.cshtml" />
     <Content Include="Views\Test\Test.cshtml" />
     <Content Include="Views\Shared\PartialTest.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\GetPostTest\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
