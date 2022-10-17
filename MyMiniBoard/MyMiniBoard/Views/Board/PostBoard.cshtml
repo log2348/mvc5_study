@@ -20,16 +20,17 @@
                       <td>작성자</td>
                       <td><input value="박지현" name="writer" disabled/></td>
                       <td>작성일</td>
-                      <td><input value=@DateTime.Now name="createdDate"/></td>
+                      <td><input value=@DateTime.Now name="createdDate"disabled/></td>
                   </tr>
               </tbody>
           </table>
 
           <br />
 
-          <div>
-              <textarea style="resize: none; width:1000px" placeholder="내용을 입력하세요." rows="20" cols="20" name="content"></textarea>
+          <div class="container">
+              <textarea style="resize: none; width: 750px;" placeholder="내용을 입력하세요." rows="20" name="content"></textarea>
           </div>
+
           <div style="text-align:right">
               <button class="btn btn-primary" type="submit">등록</button>
               <a class="btn btn-secondary" href="/Board/Board">목록</a>
